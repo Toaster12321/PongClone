@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh0p1t1gxgnh"]
+
+[ext_resource type="Texture2D" uid="uid://d2ahkes5uc22" path="res://Stages/TileMaps/tilemapblack32.png" id="1_fi5xu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e7v8h"]
+texture = ExtResource("1_fi5xu")
+texture_region_size = Vector2i(32, 32)
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_faqwg"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_e7v8h")
+
+[node name="Walls" type="TileMapLayer"]
+tile_set = SubResource("TileSet_faqwg")

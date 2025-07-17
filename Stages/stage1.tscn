@@ -1,0 +1,166 @@
+[gd_scene load_steps=10 format=4 uid="uid://bya51nyt8btbk"]
+
+[ext_resource type="PackedScene" uid="uid://bjyx76fl4404v" path="res://Player/player_1_bar.tscn" id="1_g6p6q"]
+[ext_resource type="PackedScene" uid="uid://y0gaawgym83j" path="res://Player/player_2_bar.tscn" id="2_3et47"]
+[ext_resource type="PackedScene" uid="uid://dh0p1t1gxgnh" path="res://Stages/Walls/wall.tscn" id="2_13i2d"]
+[ext_resource type="PackedScene" uid="uid://ddd6f4icitsug" path="res://Ball/scenes/ball.tscn" id="4_5rp0p"]
+[ext_resource type="Script" path="res://Stages/Goal/scripts/goal_zone.gd" id="5_j2k5x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yd68n"]
+size = Vector2(43, 1914.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drbbg"]
+size = Vector2(43, 1914.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gor8h"]
+size = Vector2(51.75, 1085)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsbmr"]
+size = Vector2(54, 1092)
+
+[node name="Stage1" type="Node2D"]
+script = ExtResource("5_j2k5x")
+
+[node name="Walls" parent="." instance=ExtResource("2_13i2d")]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA8AAAAAAAAAAAAAABAAAAAAAAAAAAAAABEAAAAAAAAAAAAAABIAAAAAAAAAAAAAABMAAAAAAAAAAAAAABQAAAAAAAAAAAAAABUAAAAAAAAAAAAAABYAAAAAAAAAAAAAABcAAAAAAAAAAAAAABgAAAAAAAAAAAAAABkAAAAAAAAAAAAAABoAAAAAAAAAAAAAABsAAAAAAAAAAAAAABwAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAB4AAAAAAAAAAAAAAB8AAAAAAAAAAAAAACAAAAAAAAAAAAAAACEAAAAAAAAAAAABACEAAAAAAAAAAAACACEAAAAAAAAAAAADACEAAAAAAAAAAAAEACEAAAAAAAAAAAAFACEAAAAAAAAAAAAGACEAAAAAAAAAAAAHACEAAAAAAAAAAAAIACEAAAAAAAAAAAAJACEAAAAAAAAAAAAKACEAAAAAAAAAAAALACEAAAAAAAAAAAAMACEAAAAAAAAAAAANACEAAAAAAAAAAAAOACEAAAAAAAAAAAAPACEAAAAAAAAAAAAQACEAAAAAAAAAAAARACEAAAAAAAAAAAASACEAAAAAAAAAAAATACEAAAAAAAAAAAAUACEAAAAAAAAAAAAVACEAAAAAAAAAAAAWACEAAAAAAAAAAAAXACEAAAAAAAAAAAAYACEAAAAAAAAAAAAZACEAAAAAAAAAAAAaACEAAAAAAAAAAAAbACEAAAAAAAAAAAAcACEAAAAAAAAAAAAdACEAAAAAAAAAAAAeACEAAAAAAAAAAAAfACEAAAAAAAAAAAAgACEAAAAAAAAAAAAhACEAAAAAAAAAAAAiACEAAAAAAAAAAAAjACEAAAAAAAAAAAAkACEAAAAAAAAAAAAlACEAAAAAAAAAAAAmACEAAAAAAAAAAAAnACEAAAAAAAAAAAAoACEAAAAAAAAAAAApACEAAAAAAAAAAAAqACEAAAAAAAAAAAArACEAAAAAAAAAAAAsACEAAAAAAAAAAAAtACEAAAAAAAAAAAAuACEAAAAAAAAAAAAvACEAAAAAAAAAAAAwACEAAAAAAAAAAAAxACEAAAAAAAAAAAAyACEAAAAAAAAAAAAzACEAAAAAAAAAAAA0ACEAAAAAAAAAAAA1ACEAAAAAAAAAAAA2ACEAAAAAAAAAAAA3ACEAAAAAAAAAAAA4ACEAAAAAAAAAAAA5ACEAAAAAAAAAAAA6ACEAAAAAAAAAAAA7ACEAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAlAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAnAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAApAAAAAAAAAAAAAAAqAAAAAAAAAAAAAAArAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAtAAAAAAAAAAAAAAAuAAAAAAAAAAAAAAAvAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAxAAAAAAAAAAAAAAAyAAAAAAAAAAAAAAAzAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA1AAAAAAAAAAAAAAA2AAAAAAAAAAAAAAA3AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA5AAAAAAAAAAAAAAA6AAAAAAAAAAAAAAA7AAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAA7AAEAAAAAAAAAAAA7AAIAAAAAAAAAAAA7AAMAAAAAAAAAAAA7AAQAAAAAAAAAAAA7AAUAAAAAAAAAAAA7AAYAAAAAAAAAAAA7AAcAAAAAAAAAAAA7AAgAAAAAAAAAAAA7AAkAAAAAAAAAAAA7AAoAAAAAAAAAAAA7AAsAAAAAAAAAAAA7AAwAAAAAAAAAAAA7AA0AAAAAAAAAAAA7AA4AAAAAAAAAAAA7AA8AAAAAAAAAAAA7ABAAAAAAAAAAAAA7ABEAAAAAAAAAAAA7ABIAAAAAAAAAAAA7ABMAAAAAAAAAAAA7ABQAAAAAAAAAAAA7ABUAAAAAAAAAAAA7ABYAAAAAAAAAAAA7ABcAAAAAAAAAAAA7ABgAAAAAAAAAAAA7ABkAAAAAAAAAAAA7ABoAAAAAAAAAAAA7ABsAAAAAAAAAAAA7ABwAAAAAAAAAAAA7AB0AAAAAAAAAAAA7AB4AAAAAAAAAAAA7AB8AAAAAAAAAAAA7ACAAAAAAAAAAAAA=")
+
+[node name="Player1Bar" parent="." instance=ExtResource("1_g6p6q")]
+position = Vector2(171, 530)
+
+[node name="Player2Bar" parent="." instance=ExtResource("2_3et47")]
+position = Vector2(1749, 530)
+
+[node name="Top_Bottom Hitbox" type="Area2D" parent="."]
+
+[node name="Top_wall" type="CollisionShape2D" parent="Top_Bottom Hitbox"]
+position = Vector2(957, 20)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_yd68n")
+debug_color = Color(0.608325, 0.539828, 3.85046e-07, 0.42)
+
+[node name="Bottom_wall" type="CollisionShape2D" parent="Top_Bottom Hitbox"]
+position = Vector2(957.25, 1065)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_drbbg")
+debug_color = Color(0.608325, 0.539828, 3.85046e-07, 0.42)
+
+[node name="Ball" parent="." instance=ExtResource("4_5rp0p")]
+position = Vector2(951, 554)
+motion_mode = 0
+
+[node name="LeftGoalZone" type="Area2D" parent="."]
+position = Vector2(27, 539)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="Left_wall" type="CollisionShape2D" parent="LeftGoalZone"]
+shape = SubResource("RectangleShape2D_gor8h")
+debug_color = Color(0.322515, 0.624569, 7.70092e-07, 0.42)
+
+[node name="RightGoalZone" type="Area2D" parent="."]
+position = Vector2(1886, 541)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="Right_wall" type="CollisionShape2D" parent="RightGoalZone"]
+position = Vector2(12, 0)
+shape = SubResource("RectangleShape2D_nsbmr")
+debug_color = Color(0.37849, 0.613683, 0, 0.42)
+
+[node name="MiddleArea" type="Node2D" parent="."]
+z_index = -1
+position = Vector2(-6160, -2312)
+scale = Vector2(7.5, 3.21053)
+
+[node name="Polygon2D" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, -13)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="Polygon2D13" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, 12)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="Polygon2D2" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, -38)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="Polygon2D3" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, -63)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="Polygon2D4" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, -88)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="Polygon2D5" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, -113)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="Polygon2D6" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, -138)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="Polygon2D7" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, -163)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="Polygon2D8" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, -188)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="Polygon2D9" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, -213)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="Polygon2D10" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, -238)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="Polygon2D11" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, -263)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="Polygon2D12" type="Polygon2D" parent="MiddleArea"]
+position = Vector2(0.1, -288)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(947, 1037, 947, 1018, 949, 1018, 949, 1037)
+
+[node name="ScoreUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="P1Score" type="Label" parent="ScoreUI"]
+layout_mode = 1
+offset_left = 480.0
+offset_top = 30.0
+offset_right = 537.0
+offset_bottom = 167.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 100
+text = "0"
+
+[node name="P2Score" type="Label" parent="ScoreUI"]
+layout_mode = 1
+offset_left = 1440.0
+offset_top = 30.0
+offset_right = 1497.0
+offset_bottom = 167.0
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 100
+text = "0"

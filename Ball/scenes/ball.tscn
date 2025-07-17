@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddd6f4icitsug"]
+
+[ext_resource type="Script" path="res://Ball/scripts/ball.gd" id="1_d14ih"]
+[ext_resource type="Texture2D" uid="uid://cxvc6fbp2qfkl" path="res://Ball/sprites/pongball_16.png" id="2_6wyon"]
+[ext_resource type="Script" path="res://Ball/scripts/states/ball_state_machine.gd" id="3_ipjo2"]
+[ext_resource type="Script" path="res://Ball/scripts/states/ball_state_serving.gd" id="4_55qir"]
+[ext_resource type="Script" path="res://Ball/scripts/states/ball_state_bouncing.gd" id="6_o2jkf"]
+[ext_resource type="Script" path="res://Ball/scripts/states/ball_state_goal.gd" id="7_7cwfv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_68ick"]
+radius = 12.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_285oa"]
+size = Vector2(24, 24)
+
+[node name="Ball" type="CharacterBody2D"]
+position = Vector2(14, -15)
+collision_layer = 17
+collision_mask = 17
+motion_mode = 1
+script = ExtResource("1_d14ih")
+move_speed = 15.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_6wyon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_68ick")
+
+[node name="BallStateMachine" type="Node" parent="."]
+script = ExtResource("3_ipjo2")
+
+[node name="Serving" type="Node" parent="BallStateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("4_55qir")
+next_state = NodePath("../Bouncing")
+
+[node name="Bouncing" type="Node" parent="BallStateMachine"]
+script = ExtResource("6_o2jkf")
+
+[node name="Goal" type="Node" parent="BallStateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("7_7cwfv")
+next_state = NodePath("../Serving")
+
+[node name="HitBox" type="Area2D" parent="."]
+position = Vector2(-1, 1)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_285oa")
+debug_color = Color(0.859991, 0.347853, 0.27415, 0.42)
