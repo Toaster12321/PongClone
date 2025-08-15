@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://y0gaawgym83j" path="res://Player/player_2_bar.tscn" id="2_3et47"]
 [ext_resource type="PackedScene" uid="uid://dh0p1t1gxgnh" path="res://Stages/Walls/wall.tscn" id="2_13i2d"]
 [ext_resource type="PackedScene" uid="uid://ddd6f4icitsug" path="res://Ball/scenes/ball.tscn" id="4_5rp0p"]
-[ext_resource type="Script" path="res://Stages/Goal/scripts/goal_zone.gd" id="5_j2k5x"]
+[ext_resource type="Script" uid="uid://iuky6jx13683" path="res://Stages/Goal/scripts/goal_zone.gd" id="5_j2k5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yd68n"]
 size = Vector2(43, 1914.5)

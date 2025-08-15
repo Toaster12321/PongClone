@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://ddd6f4icitsug"]
 
-[ext_resource type="Script" path="res://Ball/scripts/ball.gd" id="1_d14ih"]
+[ext_resource type="Script" uid="uid://dcyp057ql8njr" path="res://Ball/scripts/ball.gd" id="1_d14ih"]
 [ext_resource type="Texture2D" uid="uid://cxvc6fbp2qfkl" path="res://Ball/sprites/pongball_16.png" id="2_6wyon"]
-[ext_resource type="Script" path="res://Ball/scripts/states/ball_state_machine.gd" id="3_ipjo2"]
-[ext_resource type="Script" path="res://Ball/scripts/states/ball_state_serving.gd" id="4_55qir"]
-[ext_resource type="Script" path="res://Ball/scripts/states/ball_state_bouncing.gd" id="6_o2jkf"]
-[ext_resource type="Script" path="res://Ball/scripts/states/ball_state_goal.gd" id="7_7cwfv"]
+[ext_resource type="Script" uid="uid://ckvoi3w0y3np" path="res://Ball/scripts/states/ball_state_machine.gd" id="3_ipjo2"]
+[ext_resource type="Script" uid="uid://bboigvv30nsiw" path="res://Ball/scripts/states/ball_state_serving.gd" id="4_55qir"]
+[ext_resource type="Script" uid="uid://r1t44cclm4px" path="res://Ball/scripts/states/ball_state_bouncing.gd" id="6_o2jkf"]
+[ext_resource type="Script" uid="uid://bmhdcvtq2tap8" path="res://Ball/scripts/states/ball_state_goal.gd" id="7_7cwfv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_68ick"]
 radius = 12.0
